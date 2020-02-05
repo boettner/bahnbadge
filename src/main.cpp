@@ -83,16 +83,14 @@ void showDepartures()
     display.println(station->name);
 
     while (da != NULL) {
-      if (String("2").equals(String(da->platform))) {
-        display.print(da->time);
-        display.print(" (+");
-        display.print(da->delay);
-        display.print(") ");
-        display.print(da->product);
-        display.print(da->line);
-        display.print(" ");
-        display.println(String(da->target).substring(0,12));
-      }
+      display.print(da->time);
+      display.print(" (+");
+      display.print(da->delay);
+      display.print(") ");
+      display.print(da->product);
+      display.print(da->line);
+      display.print(" ");
+      display.println(String(da->target).substring(0,12));
 
       da = da->next;
     }
