@@ -88,7 +88,7 @@ void showDepartures()
 
       output += da->time;
       output += " (";
-      output += da->delay;
+      output += da->textdelay;
       output += ") ";
       output += da->product;
       output += da->line;
