@@ -39,7 +39,7 @@ unsigned long debounceDelay = 50;    //the debounce time
 
 bool OTA = false; //OTA mode disabled by default
 
-// initialize DB api
+// Initialize DB api
 DBAPI db;
 
 void showIP() {
@@ -83,15 +83,18 @@ void showDepartures()
     display.println(station->name);
 
     while (da != NULL) {
-      display.print(da->time);
-      display.print(" (+");
-      display.print(da->delay);
-      display.print(") ");
-      display.print(da->product);
-      display.print(da->line);
-      display.print(" ");
-      display.println(String(da->target).substring(0,12));
 
+      String output = "";
+
+      output += da->time;
+      output += " (";
+      output += da->delay;
+      output += ") ";
+      output += da->product;
+      output += da->line;
+      output += " ";
+      output += da->target;
+      display.println(output.substring(0,27));
       da = da->next;
     }
   }
